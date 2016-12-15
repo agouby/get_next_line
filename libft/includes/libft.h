@@ -6,7 +6,7 @@
 /*   By: agouby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:03:27 by agouby            #+#    #+#             */
-/*   Updated: 2016/11/14 13:01:25 by agouby           ###   ########.fr       */
+/*   Updated: 2016/12/05 20:46:38 by agouby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_split			ft_getwords(char const *str, size_t start, int c);
 size_t			ft_countwords(char *str, int c);
+char			*ft_strjoin_del(char const *s1, char const *s2);
 
 #endif

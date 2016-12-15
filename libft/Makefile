@@ -6,7 +6,7 @@
 #    By: agouby <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 18:47:28 by agouby            #+#    #+#              #
-#    Updated: 2016/11/15 11:51:55 by agouby           ###   ########.fr        #
+#    Updated: 2016/12/05 20:46:58 by agouby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,8 @@ SRC =	srcs/ft_memset.c \
 		srcs/ft_lstmap.c \
 		srcs/ft_lstnew.c \
 		srcs/ft_getwords.c \
-		srcs/ft_countwords.c
+		srcs/ft_countwords.c \
+		srcs/ft_strjoin_del.c
 
 all: $(NAME)
 
@@ -100,3 +101,5 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 re: fclean all
+
+.PHONY: all re clean fclean

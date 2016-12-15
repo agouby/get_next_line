@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getwords.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin_del.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agouby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/12 19:00:57 by agouby            #+#    #+#             */
-/*   Updated: 2016/11/14 13:02:36 by agouby           ###   ########.fr       */
+/*   Created: 2016/12/08 17:38:09 by agouby            #+#    #+#             */
+/*   Updated: 2016/12/08 17:38:14 by agouby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_split		ft_getwords(char const *str, size_t start, int c)
+char	*ft_strjoin_del(char const *s1, char const *s2)
 {
-	size_t	len;
-	t_split split;
-	size_t	i;
+	char		*new;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
-	len = 0;
-	while (str[start] == c)
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	while (s1[i])
 	{
-		start++;
+		new[i] = s1[i];
+		i++;
 	}
-	while (str[start + len] != c && str[start + len])
+	while (s2[j])
 	{
-		len++;
+		new[i + j] = s2[j];
+		j++;
 	}
-	split.len = len;
-	split.start = start;
-	return (split);
+	new[i + j] = '\0';
+	ft_strdel((char **)&s1);
+	ft_strdel((char **)&s2);
+	return (new);
 }
